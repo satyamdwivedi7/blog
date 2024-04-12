@@ -4,8 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test" : "echo \"Error: no test specified\" && exit 1"
+    "start:app": "npm run develop",
+    "start:lambda": "netlify-lambda serve src/lambda",
+    "start": "concurrently \"yarn start:lambda\" \"yarn develop\"",
+    "develop": "gatsby develop",
+    "start": "netlify dev"
   },
   "author": "",
   "license": "ISC",
