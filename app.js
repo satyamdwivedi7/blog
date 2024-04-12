@@ -19,6 +19,8 @@ app.use(express.static("public"));
 
 const posts = [];
 
+app.get("/check",(req,res)=>res.status(200).send("Server is running"));
+
 app.get("/", function (req, res) {
   res.render("home", { startingContent: homeStartingContent, posts: posts });
 });
